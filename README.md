@@ -1,2 +1,2 @@
 # ECON-WillHuang
-This is a line from RStudio
+This is Hung-Kai Huang's Labor Economic Github Repo

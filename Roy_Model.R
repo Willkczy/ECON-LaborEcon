@@ -29,12 +29,22 @@ multi_normal_data = multi_normal_data[, .(w_0 = mu_0 + epsilon_0, w_1 = mu_1 + e
 multi_normal_data = multi_normal_data[, `:=` (I = sample(c(0,1), replace = TRUE,size = sizes))]
 
 #5
-#Q1
+#w0
 multi_normal_data %>%
   group_by(I) %>%
   summarise(Q_0 = mean(w_0))
 
-#Q2
+#w1
 multi_normal_data %>%
   group_by(I) %>%
   summarise(Q_1 = mean(w_1))
+
+#e0
+multi_normal_data %>%
+  group_by(I) %>%
+  summarise(e_0 = mean(epsilon_0))
+
+#e1
+multi_normal_data %>%
+  group_by(I) %>%
+  summarise(e_1 = mean(epsilon_1))
